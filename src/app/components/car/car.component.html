@@ -1,0 +1,14 @@
+<h1>Car</h1>
+<ul>
+    <li>Name: {{ car.name }}</li>
+    <li>Mileage: {{ car.mileage }}</li>
+    <li>Capacity: {{ car.tankCapacity }}</li>
+    <li>Current Fuel: {{ car.currentFuel }}</li>
+    <li>Characteristics
+        <ul>
+            <li *ngFor="let characteristic of car.characteristics">{{ characteristic }}</li>
+        </ul>
+    </li>
+</ul>
+<button (click)="onDriveHadler()">Drive</button>
+<button [ngClass]="{hide: car.currentFuel}" (click)="refuel()">Refuel</button>
